@@ -1,0 +1,12 @@
+import Knex from 'knex'
+
+export async function up(knex: Knex){
+   return knex.schema.createTable('campus', table =>{
+      table.string('id').notNullable()
+      table.string('nome').notNullable()
+   })
+}
+
+export async function down(knex: Knex){
+   return knex.schema.dropTable('campus')
+}
